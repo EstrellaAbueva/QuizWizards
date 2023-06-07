@@ -1,0 +1,39 @@
+@use '../../styles' as *;
+
+.Shine {
+  height: 45px;
+  width: 100%;
+  background-color: $neutral-50;
+  opacity: 0.8;
+  background-image: linear-gradient(
+    to right,
+    $yellow-0 0%,
+    $yellow-50 20%,
+    $yellow-0 40%,
+    $yellow-0 100%
+  );
+  background-repeat: no-repeat;
+  background-size: 800px 104px;
+  position: relative;
+
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+  animation-name: placeholderShimmer;
+  animation-timing-function: linear;
+
+  &___rounded {
+    border-radius: 16px;
+  }
+
+  &_admin {
+    background-color: $neutral-900;
+    background-image: linear-gradient(
+    to right,
+    $neutral-900 0%,
+    $neutral-500 20%,
+    $neutral-900 40%,
+    $neutral-900 100%
+  );
+  }
+}

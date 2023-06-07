@@ -1,0 +1,8 @@
+@use '../../styles' as *;
+
+.TakerCardLink {
+  background-color: $neutral-900;
+  border: 0;
+  padding: 16px 40px;
+  @include flex-between;
+}

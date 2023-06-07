@@ -1,0 +1,19 @@
+@use '../../styles' as *;
+
+.QuestionCardLink {
+  background-color: $neutral-900;
+  border: 0;
+  padding: 16px 40px;
+  display: grid;
+
+  &_title {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  &_icon {
+    font-size: 80px;
+    color: $blue-200;
+  }
+}

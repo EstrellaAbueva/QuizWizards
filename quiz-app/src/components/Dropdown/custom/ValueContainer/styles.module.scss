@@ -1,0 +1,18 @@
+@use '../../../../styles' as *;
+
+.CustomValueContainer {
+  display: flex;
+  align-items: flex-end;
+
+  &_label {
+    position: absolute;
+    pointer-events: none;
+    transform-origin: bottom left;
+    max-width: calc(100% - 16px);
+    padding: 0 8px;
+    left: -6px;
+    top: 2px;
+    transform: scale(0.75) translateY(-30px);
+    @include text-ellipsis;
+  }
+}

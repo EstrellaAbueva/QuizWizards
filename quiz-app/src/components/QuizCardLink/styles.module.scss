@@ -1,0 +1,17 @@
+@use '../../styles' as *;
+
+.QuizCardLink {
+  background-color: $neutral-900;
+  border: 0;
+  padding: 16px 40px;
+
+  &_title {
+    @include flex-start;
+    gap: 16px;
+  }
+
+  &_icon {
+    font-size: 80px;
+    color: $blue-200;
+  }
+}

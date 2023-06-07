@@ -1,0 +1,79 @@
+@use '../../styles' as *;
+
+$red-shadow: 0px 8px 40px -8px rgba(238, 100, 80, 0.6);
+$yellow-shadow: 0px 8px 40px -8px rgba(248, 209, 29, 0.35);
+$blue-shadow : 0px 8px 40px -8px rgba(29, 209, 248, 0.35);
+
+.Button {
+  &___primary {
+    &___red {
+      @include primary($red-200, $red-400, $red-400, $neutral-0, $red-shadow);
+    }
+
+    &___yellow {
+      @include primary(
+        $yellow-500,
+        $yellow-200,
+        $yellow-200,
+        $neutral-0,
+        $yellow-shadow
+      );
+    }
+
+    &___blue {
+      @include primary(
+        $blue-200,
+        $blue-100,
+        $blue-100,
+        $neutral-0,
+        $blue-shadow
+      );
+    }
+  }
+
+  &___link {
+    display: block;
+  }
+
+  &___text {
+    &___red {
+      @include textButton($red-200);
+    }
+    
+    &___yellow {
+      @include textButton($yellow-200);
+    }
+
+    &___gray {
+      @include textButton($neutral-300);
+    }
+
+    &___white {
+      @include textButton($neutral-0);
+    }
+  }
+
+  &___withIcon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &_iconLeft {
+      margin-right: 8px;
+    }
+
+    &_iconRight {
+      margin-left: 8px;
+    }
+  }
+
+  &___disabled {
+    pointer-events: none;
+    opacity: 0.5;
+  }
+  
+  &_wrapper {
+    position: relative;
+    display: inline-block;
+  }
+}

@@ -1,0 +1,70 @@
+@use '../../../styles' as *;
+
+.TakerInfo {
+  padding: 0;
+
+  &_header {
+    background-color: $neutral-900;
+    border-radius: 16px;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: 1fr;
+    justify-content: center;
+    align-items: center;
+    padding: 0.1em 1.5em;
+  }
+
+  &_icon {
+    color: $blue-200;
+    font-size: 180px;
+    margin: 20px;
+  }
+
+  &_details {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    grid-column: auto / span 5;
+
+    &_subInfo {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    &_info {
+      align-items: center;
+      display: flex;
+      gap: 12px;
+    }
+  }
+
+  &_elipsis {
+    grid-column: 11;
+  }
+
+  &_bottom {
+    @include flex-center;
+    flex-direction: column;
+
+    &_heading {
+      border-bottom: 2px solid $neutral-50;
+      cursor: pointer;
+      min-width: 150px;
+      margin-bottom: 24px;
+      padding: 24px 0 12px 0;
+      text-align: center;
+
+      &:hover {
+        background-color: $neutral-400;
+      }
+    }
+
+    &_quizzes {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      width: 100%;
+    }
+  }
+}

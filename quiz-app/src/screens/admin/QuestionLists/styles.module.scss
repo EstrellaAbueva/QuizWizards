@@ -1,0 +1,35 @@
+@use '../../../styles/' as *;
+
+.QuestionLists {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+
+  &_header {
+    background-color: $neutral-900;
+    border-radius: 16px;
+    @include flex-between;
+    padding: 12px 16px;
+  }
+
+  &_search {
+    min-width: 280px;
+  }
+  
+  &_questions {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+
+  &_noQuestions {
+    @include flex-center;
+    flex-direction: column;
+
+    &_icon {
+      color: $neutral-300;
+      font-size: 200px;
+      margin: 20px;
+    }
+  }
+}

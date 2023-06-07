@@ -1,0 +1,11 @@
+@use '../../styles' as *;
+
+.Section {
+  padding: 80px 0 60px;
+  position: relative;
+  width: 100%;
+
+  @include breakpoint(sm) {
+    padding: 80px 0 40px;
+  }
+}

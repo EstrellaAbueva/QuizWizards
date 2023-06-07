@@ -1,0 +1,14 @@
+.Dropdown {
+  position: relative;
+
+  &___slim {
+    &_label {
+      margin: 0 0 8px 0;
+      display: block;
+    }
+  }
+
+  &_helperTextContainer {
+    margin: 8px 0 0 16px;
+  }
+}

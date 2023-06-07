@@ -1,0 +1,77 @@
+@use '../../styles' as *;
+
+.QuizCard {
+  background-color: $neutral-50;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 24px;
+  padding: 24px 40px;
+  align-items: center;
+  justify-content: center;
+  
+  &_icon {
+    font-size: 80px;
+    color: $neutral-900;
+    grid-column: 1/2;
+
+    &___neutral {
+      color: $neutral-300;
+    }
+  }
+
+  &_name {
+    grid-column: 2/5;
+  }
+
+  &_description {
+    grid-column: 5/8;
+  }
+
+  &_leaderboard {
+    grid-column: 8;
+  }
+
+  &_score {
+    display: flex;
+    align-items: center;
+    grid-column: 9;
+  }
+
+  &_buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    grid-column: 10/13;
+
+    &_link {
+      > h5 {
+      color: $yellow-500 !important;
+      }
+    }
+  }
+
+  &_button {
+    grid-column: 10/13;
+  }
+
+  &_button {
+    min-width: 190px;
+  }
+
+  &___neutral {
+    background-color: $neutral-900;
+  }
+
+  > span {
+    grid-column: 10/13;
+    
+    > button {
+      width: 100%;
+    }
+  }
+
+  &_tooltip {
+    grid-column: 13;
+    margin-left: -1rem;
+  }
+}

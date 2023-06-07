@@ -1,0 +1,61 @@
+@use '../../styles' as *;
+
+.Action {
+  padding: 1rem;
+  border: none;
+  border-bottom: 1px solid $neutral-200;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  background: transparent;
+  width: 100%;
+  cursor: pointer;
+  text-align: left;
+
+  &:last-of-type {
+    border-bottom: none;
+  }
+}
+
+.Name {
+  display: grid;
+  grid-template-columns: 16px auto;
+  gap: 0.5rem;
+  align-items: center;
+
+  &___neutral {
+    @extend .Name;
+
+    .Name_icon,
+    .Name_text {
+      color: $neutral-500 !important;
+    }
+  }
+
+  &___blue {
+    @extend .Name;
+
+    .Name_icon,
+    .Name_text {
+      color: $blue-200 !important;
+    }
+  }
+
+  &___yellow {
+    @extend .Name;
+
+    .Name_icon,
+    .Name_text {
+      color: $yellow-500 !important;
+    }
+  }
+
+  &___green {
+    @extend .Name;
+
+    .Name_icon,
+    .Name_text {
+      color: $yellow-500 !important;
+    }
+  }
+}

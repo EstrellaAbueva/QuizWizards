@@ -1,0 +1,143 @@
+@use '../../styles' as *;
+
+@mixin base {
+  @include body(1rem, 1.5);
+  width: 100%;
+  outline: none;
+  text-align: left;
+
+  &::placeholder {
+    opacity: 0.5;
+  }
+
+  @content;
+}
+
+@mixin base-slim {
+  @include base {
+    transition: all 0.1s ease-out;
+    border-radius: 24px;
+    padding: 8px 0 8px 16px;
+    border: 1px solid;
+
+    &:disabled {
+      background-color: $neutral-50;
+      border-color: $neutral-100;
+      box-shadow: none;
+    }
+
+    &:focus:not([disabled]) {
+      background-color: $neutral-100 !important;
+      border-color: $brown-100 !important;
+      box-shadow: 0 0 0 4px rgba(44, 171, 227, 0.15);
+    }
+
+    &:active:not([disabled]) {
+      background-color: $neutral-100;
+      border: 1px solid;
+      box-shadow: none;
+    }
+
+    &:hover:not([disabled]) {
+      background-color: $neutral-100;
+      box-shadow: 0 0 0 4px rgba(44, 171, 227, 0.15);
+    }
+  }
+}
+
+@mixin base-form {
+  @include base {
+    @include ease(0.1s);
+    border-radius: 8px 8px 0 0;
+    padding: 24px 16px 4px;
+
+    &:disabled {
+      opacity: 0.7;
+    }
+
+    &:focus:not([disabled]) {
+      border-bottom-color: $brown-100 !important;
+    }
+  }
+}
+
+@mixin base-icon($right: 16px) {
+  position: absolute;
+  right: $right;
+  user-select: none;
+  color: $blue-200;
+
+  @content;
+}
+
+.Input {
+  &___slim {
+    @include base-slim;
+
+    &_label {
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    &_icon {
+      @include base-icon(12px) {
+        top: 12px;
+      }
+    }
+
+  }
+
+  &___form {
+    @include base-form;
+
+    &_label {
+      position: absolute;
+      pointer-events: none;
+      transform-origin: bottom left;
+      max-width: calc(100% - 16px);
+      padding: 0 8px;
+      left: 8px;
+      top: 16px;
+      transition: transform 0.25s;
+      @include text-ellipsis;
+
+      &___active {
+        transform: scale(0.75) translateY(-22px);
+      }
+    }
+
+    &_icon {
+      @include base-icon {
+        top: 20px;
+      }
+    }
+
+    &___icon {
+      padding-right: 32px;
+    }
+
+    &:focus ~ .Input___form_label {
+      transform: scale(0.75) translateY(-22px);
+    }
+  }
+
+  &___error {
+    border-color: $red-200 !important;
+  }
+
+  &___success {
+    border-color: $yellow-200 !important;
+  }
+
+  &___white {
+    background-color: transparentize($color: #FFFFFF, $amount: 0.5)  !important;
+  }
+
+  &_helperTextContainer {
+    margin: 8px 0 0 16px;
+  }
+
+  &_container {
+    position: relative;
+  }
+}

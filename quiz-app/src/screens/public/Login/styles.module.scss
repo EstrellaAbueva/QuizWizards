@@ -1,0 +1,60 @@
+@use '../../../styles/' as *;
+
+.Login {
+  background-color: $neutral-900;
+  color: $neutral-900;
+  @include flex-center;
+  flex-direction: column;
+  height: 100%;
+  text-align: center;
+  width: 100%;
+
+  &_content {
+    width: 80%;
+  }
+
+  &_header {
+    margin-bottom: 40px
+  }
+
+  &_button {
+    @include primary($yellow-500, pointer, transparentize($yellow-500, 0.3), $brown-500, 0);
+    margin-top: 28px;
+    width: 100%;
+  }
+
+  &_content_input {
+    margin: 20px 0;
+    padding-right: 0;
+
+    &_errorMessage {
+      margin-bottom: 16px;
+    }
+  }
+
+  &_content_buttonGroup_buttonText {
+    align-items: center;
+    display: flex;
+    font-weight: 700;
+    justify-content: center;
+  }
+
+  &_content_buttonGroup_spinner {
+    margin-left: 8px;
+    width: max-content;
+  }
+
+  .Signup_content_group {
+    align-items: center;
+    display: flex ;
+    justify-content: center;
+    margin: 20px 0;
+    padding: 0;
+    width: 100% !important;
+  }
+  
+  .Signup_link {
+    margin: 0 10px;
+    color: $yellow-500;
+  }
+}

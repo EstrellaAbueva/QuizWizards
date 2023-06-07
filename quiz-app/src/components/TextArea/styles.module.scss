@@ -1,0 +1,119 @@
+@use '../../styles/' as *;
+
+@mixin base-form {
+  @include textArea;
+  @include body(1rem, 1.5);
+  color: $brown-500;
+  background-color: $neutral-0;
+  border-bottom: 2px solid $brown-500;
+
+  text-align: left;
+  resize: vertical;
+  overflow-y: scroll;
+  border-radius: 8px 8px 0 0;
+  padding: 24px 16px 4px;
+  @include ease(0.1s);
+
+  &:focus {
+    border-color: $yellow-200;
+  }
+
+  &::placeholder {
+    opacity: 0.5;
+  }
+}
+
+@mixin base-slim {
+  @include textArea;
+  @include body(0.875rem, 1.5);
+  color: $neutral-900;
+  background-color: $neutral-0;
+  height: 150px;
+  resize: vertical;
+  max-width: inherit;
+  border-radius: 24px;
+  padding: 12px;
+  transition: border-color 0.1s ease-in-out, background-color 0.1s ease-in-out,
+    box-shadow 0.1s ease-in-out;
+
+  &:focus:not([disabled]),
+  &:active:not([disabled]) {
+    background-color: $neutral-100 !important;
+    border: 1px solid;
+    box-shadow: 0 0 0 4px rgba(44, 171, 227, 0.15);
+  }
+
+  &:hover:not([disabled]) {
+    background-color: $neutral-100;
+    box-shadow: 0 0 0 4px rgba(44, 171, 227, 0.15);
+  }
+}
+
+@mixin base-icon($right: 16px) {
+  position: absolute;
+  right: $right;
+  color: $neutral-500;
+  user-select: none;
+
+  @content;
+}
+
+.TextArea {
+  &___form {
+    @include base-form;
+
+    &_placeholder {
+      position: absolute;
+      pointer-events: none;
+      transform-origin: bottom left;
+      max-width: calc(100% - 16px);
+      padding: 0 8px;
+      left: 8px;
+      top: 16px;
+      transition: transform 0.25s;
+      @include text-ellipsis;
+
+      &___active {
+        transform: scale(0.75) translateY(-22px);
+      }
+    }
+
+    &:focus ~ .TextArea___form_placeholder {
+      transform: scale(0.75) translateY(-22px);
+    }
+  }
+
+  &___slim {
+    @include base-slim;
+  }
+
+  &_icon {
+    @include base-icon {
+      top: 20px;
+    }
+  }
+
+  &___icon {
+    padding-right: 32px;
+  }
+
+  &___error {
+    border-color: $red-200;
+  }
+
+  &___success {
+    border-color: $yellow-200;
+  }
+
+  &_helperText {
+    white-space: pre-wrap;
+  }
+
+  &_helperTextContainer {
+    margin: 8px 0 0 16px;
+  }
+
+  &_container {
+    position: relative;
+  }
+}

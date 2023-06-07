@@ -1,0 +1,33 @@
+@use '../../../styles/' as *;
+
+.Home {
+  @include flex-center;
+  flex-direction: column;
+  gap: 72px;
+
+  &_header {
+    background-color: $neutral-900;
+    border-radius: 16px;
+    padding: 24px 32px;
+  }
+
+  &_form {
+    background-color: $neutral-900;
+    border-radius: 16px;
+    min-width: 600px;
+    padding: 24px 32px;
+    text-align: center;
+
+    &_dropdown {
+      padding: 12px 0;
+    }
+
+    &_buttonGroup {
+      margin-top: 40px;
+      
+      &_button {
+        min-width: 250px;
+      }
+    }
+  }
+}

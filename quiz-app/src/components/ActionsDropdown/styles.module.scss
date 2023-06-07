@@ -1,0 +1,14 @@
+@use '../../styles' as *;
+
+.ActionsDropdown {
+  position: relative;
+  width: min-content;
+
+  &_iconButton {
+    > i {
+      color: $neutral-100;
+      font-size: 60px !important;
+    }
+    
+  }
+}

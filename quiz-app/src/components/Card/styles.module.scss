@@ -1,0 +1,21 @@
+@use '../../styles' as *;
+
+.Card {
+  border-radius: 16px;
+  border: 1px solid;
+  text-decoration: none;
+
+  &___clickable {
+    transition: background-color 0.3s;
+    border-color: $neutral-900;
+    cursor: pointer;  
+
+    &:hover {
+      box-shadow: $shadow-raised;
+    }
+
+    &:active {
+      border-color: $yellow-500;
+    }
+  }
+}

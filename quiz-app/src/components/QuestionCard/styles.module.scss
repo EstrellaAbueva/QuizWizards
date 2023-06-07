@@ -1,0 +1,28 @@
+@use '../../styles' as *;
+
+.QuestionCard {
+  background-color: $neutral-900;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  padding: 24px 40px;
+  align-items: center;
+  justify-content: center;
+
+  &_icon {
+    font-size: 80px;
+    color: $neutral-300;
+    grid-column: 1/2;
+    margin-right: 24px;
+  }
+
+  &_text {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    grid-column: 2/6;
+  }
+
+  &_button {
+    grid-column: 7/9;
+  }
+}

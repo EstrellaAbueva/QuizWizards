@@ -1,0 +1,48 @@
+@use '../../styles' as *;
+
+.Navbar {
+  background: $neutral-900;
+  left: 0;
+  padding: 12px 0;
+  position: fixed;
+  top: 0;
+  transition: all 0.2s ease-in-out;
+  right: 0;
+  z-index: 1;
+  @include flex-center;
+
+  &_container {
+    @include flex-between;
+    width: 100%;
+  }
+
+  &_logo {
+    cursor: pointer;
+    text-decoration: none;
+    @include flex-center;
+  }
+
+  &_links {
+    position: relative;
+
+    &_iconButton {
+      margin-left: 40px;
+    }
+  }
+}
+
+.Account {
+  &_dropdown {
+    background-color: $neutral-50;
+    border: 1px solid $neutral-300;
+    position: absolute;
+    right: -55px;
+    top: 45px;
+    width: 145px;
+    z-index: 5;
+
+    &___top {
+      top: 60px;
+    }
+  }
+}

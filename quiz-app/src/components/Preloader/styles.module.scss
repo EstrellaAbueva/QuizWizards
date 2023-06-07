@@ -1,0 +1,15 @@
+@use '../../styles' as *;
+
+.Preloader {
+  @include ease(0.4s);
+  overflow: hidden;
+
+  &_body {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+
+    @include breakpoint(sm) {
+      grid-template-columns: repeat(3, 33.33%);
+    }
+  }
+}

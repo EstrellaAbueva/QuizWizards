@@ -1,0 +1,63 @@
+@use '../../../styles' as *;
+
+.ReviewTakerQuiz {
+  display: flex;
+  flex-direction: column;
+  padding-top: 60px;
+  
+  &_header {
+    display: flex;
+    gap: 8px;
+    margin: 40px 0px;
+
+    &_subinfo {
+      @include flex-start;
+      gap: 8px;
+      margin-top: 8px;
+    }
+
+    &_icon {
+      color: $blue-200;
+    }
+  }
+
+  &_content {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    padding: 0 32px;
+    margin: 0 auto;
+    min-width: 850px;
+
+    &_topic {
+      @include flex-start;
+      background-color: $neutral-900;
+      border-radius: 16px;
+      gap: 8px;
+      padding: 16px 24px;
+    }
+
+    &_question {
+      display: flex;
+      background-color: $neutral-900;
+      border-radius: 16px;
+      flex-direction: column;
+      gap: 16px;
+      padding: 32px 24px;
+
+      &_input {
+        width: 100%;
+      }
+    }
+  }
+
+  &_buttons {
+    @include flex-between;
+    margin-top: 40px;
+
+    &_button {
+      @include flex-center;
+      min-width: 200px;
+    }
+  }
+}

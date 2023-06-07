@@ -1,0 +1,38 @@
+@use '../../../styles' as *;
+
+.QuestionInfo {
+  height: 100vh;
+  @include flex-center;
+
+  &_container {
+    padding: 0;
+  }
+
+  &_header {
+    background-color: $neutral-900;
+    border-radius: 16px;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: 1fr;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5em 1.5em;
+  }
+
+  &_icon {
+    color: $blue-200;
+    font-size: 180px;
+    margin: 20px;
+  }
+
+  &_details {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    grid-column: auto / span 9;
+  }
+
+  &_elipsis {
+    grid-column: 11;
+  }
+}

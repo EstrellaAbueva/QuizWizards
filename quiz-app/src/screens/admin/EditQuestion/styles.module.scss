@@ -1,0 +1,53 @@
+@use '../../../styles/' as *;
+
+.EditQuestion {
+  &_header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 24px;
+  }
+
+  &_form {
+    display: grid;
+    gap: 16px;
+    padding: 24px 32px;
+    max-width: 900px;
+    margin: 0 auto;
+
+    &_input, &_textArea {
+      background-color: $neutral-900;
+      border-radius: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      padding: 24px 32px;
+      
+      &_answerArea{
+        > textarea {
+          max-height: 100px;
+        }
+      }
+    }
+
+    &_info {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    &_icon {
+      color: $blue-200;
+      font-size: 32px;
+    }
+
+    &_buttonGroup {
+      margin-top: 20px;
+      text-align: center;
+      
+      &_button {
+        min-width: 250px;
+      }
+    }
+  }
+}

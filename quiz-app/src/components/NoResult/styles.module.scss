@@ -1,0 +1,30 @@
+@use '../../styles' as *;
+
+.NoResult {
+  @include flex-center;
+  flex-direction: column;
+  gap: 24px;
+  margin-top: 40px;
+
+  &_title {
+    @include flex-center;
+    width: 400px;
+
+    &_img {
+      padding-right: 24px;
+    }
+
+    &_text {
+      font-size: 100px;
+      line-height: 100px;
+      padding: 0 24px;
+      border-left: 8px solid $neutral-300;
+    }
+  }
+
+  &_icon {
+    color: $neutral-300;
+    font-size: 200px;
+    margin: 20px;
+  }
+}

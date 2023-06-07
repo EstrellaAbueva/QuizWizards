@@ -1,0 +1,15 @@
+@use '../../../styles/' as *;
+
+.Home {
+  &_header {
+    margin: 40px 60px;
+  }
+
+  &_quizzes {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 24px;
+    margin: 40px 0;
+    padding: 0 60px;
+  }
+}

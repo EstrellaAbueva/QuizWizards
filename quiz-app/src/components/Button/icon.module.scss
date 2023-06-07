@@ -1,0 +1,156 @@
+@use '../../styles' as *;
+
+@mixin solid($size) {
+  @include ease(0.3s);
+  cursor: pointer;
+  background: $yellow-200;
+  border-radius: 100px;
+  border: none;
+  box-shadow: $shadow-raised;
+  text-transform: capitalize;
+  outline: none;
+  padding: 16px;
+  height: max-content;
+  text-decoration: none;
+  @include flex-center;
+
+  &:hover {
+    background: $yellow-500;
+  }
+
+  .IconButton_icon {
+    @if $size == xs {
+      font-size: 1rem;
+    } @else if $size == sm {
+      font-size: 1.25rem;
+    } @else if $size == md {
+      font-size: 1.5rem;
+    } @else if $size == lg {
+      font-size: 2rem;
+    } @else if $size == xl {
+      font-size: 2.25rem;
+    }
+  }
+}
+
+@mixin outline($size) {
+  @include ease(0.3s);
+  cursor: pointer;
+  background-color: transparent;
+  border-radius: 100px;
+  text-transform: capitalize;
+  outline: none;
+  padding: 4px;
+  height: max-content;
+  text-decoration: none;
+  @include flex-center;
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: default;
+  }
+
+  .IconButton_icon {
+    @if $size == xs {
+      font-size: 1rem;
+    } @else if $size == sm {
+      font-size: 1.25rem;
+    } @else if $size == md {
+      font-size: 1.5rem;
+    } @else if $size == lg {
+      font-size: 1.75rem;
+    } @else if $size == xl {
+      font-size: 4rem;
+    }
+  }
+}
+
+@mixin buttonColor($color) {
+  color: $color;
+  border: 0;
+
+  &:hover:not(:disabled) {
+    background-color: transparentize($color, 0.9);
+  }
+
+  &:focus:not(:disabled),
+  &:active:not(:disabled) {
+    background-color: transparentize($color, 0.75);
+  }
+}
+
+.IconButton {
+  &___solid {
+    &___xs {
+      @include solid(xs);
+    }
+
+    &___sm {
+      @include solid(sm);
+    }
+
+    &___md {
+      @include solid(md);
+    }
+
+    &___lg {
+      @include solid(lg);
+    }
+
+    &___xl {
+      @include solid(xl);
+    }
+  }
+
+  &___outline {
+    &___xs {
+      @include outline(xs);
+    }
+
+    &___sm {
+      @include outline(sm);
+    }
+
+    &___md {
+      @include outline(md);
+    }
+
+    &___lg {
+      @include outline(lg);
+    }
+
+    &___xl {
+      @include outline(xl);
+    }
+  }
+
+  &___disabled {
+    opacity: 0.5;
+    pointer-events: none;
+  }
+
+  &___yellow {
+    @include buttonColor($yellow-200);
+  }
+
+  &___blue {
+    @include buttonColor($blue-200);
+  }
+
+  &___brown {
+    @include buttonColor($brown-500);
+  }
+
+  &___red {
+    @include buttonColor($red-400);
+  }
+
+  &___neutral {
+    @include buttonColor($neutral-900);
+  }
+
+  &_wrapper {
+    position: relative;
+    display: inline-block;
+  }
+}

@@ -1,0 +1,23 @@
+@use '../../styles' as *;
+
+.Info {
+  &_label {
+    display: flex;
+    align-items: center;
+    margin: 0 0 4px 0;
+
+    &_tooltip {
+      display: flex;
+      margin: 0 0 0 8px;
+    }
+  }
+
+  &_text {
+    white-space: pre-wrap;
+  }
+
+  &_icon {
+    color: $blue-200;
+    font-size: 20px;
+  }
+}

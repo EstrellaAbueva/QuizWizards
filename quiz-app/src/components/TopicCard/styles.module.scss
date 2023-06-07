@@ -1,0 +1,25 @@
+@use '../../styles' as *;
+
+.TopicCard {
+  background-color: $neutral-900;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  padding: 24px 40px;
+  gap: 24px;
+  align-items: center;
+  justify-content: center;
+
+  &_icon {
+    font-size: 80px;
+    color: $neutral-300;
+    grid-column: 1/2;
+  }
+
+  &_name {
+    grid-column: 2/6;
+  }
+
+  &_button {
+    grid-column: 6/8;
+  }
+}

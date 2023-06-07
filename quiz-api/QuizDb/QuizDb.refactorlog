@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Operations Version="1.0" xmlns="http://schemas.microsoft.com/sqlserver/dac/Serialization/2012/02">
+  <Operation Name="Rename Refactor" Key="319917d7-ebf7-4180-9104-1cb5fbb6cf3e" ChangeDateTime="05/03/2023 10:24:32">
+    <Property Name="ElementName" Value="[dbo].[Topics].[Date and Time ]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Topics]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="DateTime " />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="59ccdbf9-fd76-4f02-9118-bc44a2997765" ChangeDateTime="05/03/2023 10:26:34">
+    <Property Name="ElementName" Value="[dbo].[Topics].[DateTimeS]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Topics]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="CreatedDate" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="ed508982-1b3f-46c9-b8fd-11d9127bcdef" ChangeDateTime="05/04/2023 13:09:54">
+    <Property Name="ElementName" Value="[dbo].[Topics].[FinishDate]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Topics]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="FinisDate" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="9b1d915a-eb19-4137-8a17-25c16e8a133a" ChangeDateTime="05/04/2023 13:50:16">
+    <Property Name="ElementName" Value="[dbo].[Takers].[User_Type]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Takers]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="Is_Admin" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="fb09270e-31cd-4785-8fff-c317c7d04660" ChangeDateTime="05/06/2023 15:58:56">
+    <Property Name="ElementName" Value="[dbo].[Takers].[Is_Admin]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Takers]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="TakerType" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="ea4c933b-90e5-4c8e-a8cf-a2cd4be2e694" ChangeDateTime="05/09/2023 03:08:21">
+    <Property Name="ElementName" Value="[dbo].[Answer].[QuestionIId ]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Answer]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="QuestionId " />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="862f91b1-58c4-47cc-aaf2-ec484563e1b2" ChangeDateTime="05/10/2023 14:07:10">
+    <Property Name="ElementName" Value="[dbo].[TakerQuiz].[CreatedDate]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[TakerQuiz]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="AssignedDate" />
+  </Operation>
+</Operations>

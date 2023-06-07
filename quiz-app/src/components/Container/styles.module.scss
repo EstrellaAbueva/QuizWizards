@@ -1,0 +1,20 @@
+@use '../../styles' as *;
+
+.Container {
+  margin: 0 auto;
+  max-width: 1440px;
+  padding: 0 60px;
+
+  @include breakpoint(lg) {
+    padding: 0 16px;
+    max-width: 960px;
+  }
+
+  @include breakpoint(md) {
+    max-width: 720px;
+  }
+
+  @include breakpoint(sm) {
+    max-width: 540px;
+  }
+}

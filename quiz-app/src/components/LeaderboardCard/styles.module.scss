@@ -1,0 +1,16 @@
+@use '../../styles' as *;
+
+.LeaderboardCard {
+  background-color: $neutral-900;
+  padding: 16px 40px;
+  @include flex-between;
+
+  &___neutral {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    > h1 {
+      grid-column: 4;
+    }
+  }
+}

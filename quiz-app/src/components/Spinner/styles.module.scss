@@ -1,0 +1,58 @@
+@use '../../styles' as *;
+
+@mixin circle($color) {
+  fill: none;
+  stroke: $color;
+  stroke-width: 4;
+  stroke-dasharray: 1, 200;
+  stroke-dashoffset: 0;
+  stroke-linecap: round;
+  animation: dash 1.5s ease-in-out infinite;
+}
+
+@mixin base($size) {
+  width: $size;
+  transform-origin: center;
+  animation: rotate 2s linear infinite;
+}
+
+.Spinner {
+  &_container {
+    width: 100%;
+    @include flex-center;
+  }
+
+  &___lg {
+    @include base(3.75rem);
+  }
+
+  &___md {
+    @include base(2.5rem);
+  }
+
+  &___sm {
+    @include base(1.25rem);
+  }
+
+  &___xs {
+    @include base(1rem);
+  }
+
+  &_circle {
+    &___white {
+      @include circle($neutral-0);
+    }
+
+    &___black {
+      @include circle($neutral-700);
+    }
+
+    &___yellow {
+      @include circle($yellow-200);
+    }
+
+    &___blue {
+      @include circle($blue-200);
+    }
+  }
+}

@@ -1,0 +1,15 @@
+@use '../../styles' as *;
+
+.TakerTag {
+  @include flex-start;
+
+  &_icon {
+    color: $neutral-300;
+    font-size: 80px;
+    margin-right: 12px;
+  }
+
+  &___adminColor {
+    color: $blue-200;
+  }
+}

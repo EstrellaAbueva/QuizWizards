@@ -1,0 +1,51 @@
+version: "3.8"
+services:
+  sqlserver:
+    build: ./quiz-api/QuizDB
+    image: sql-server
+    container_name: quizwizard-db
+    ports:
+      - 1433:1433
+    volumes:
+      - sql-data:/var/opt/mssql
+    env_file:
+      - ./env/sqlserver.env
+    networks:
+      - quizwizard-network
+
+  backend:
+    build: ./quiz-api/QuizApi
+    image: web-api
+    container_name: quizwizard-api
+    ports:
+      - 7137:5000
+    env_file:
+      - ./env/backend.env
+    depends_on:
+      - sqlserver
+    networks:
+      - quizwizard-network
+
+  frontend:
+    build: ./quiz-app
+    image: web-app
+    container_name: quizwizard-app
+    ports:
+      - 3000:3000
+    volumes:
+      - ./quiz-app/src:/app/src
+    depends_on:
+      - backend
+    networks:
+      - quizwizard-network
+    environment:
+      - WATCHPACK_POLLING=true
+    stdin_open: true
+    tty: true
+      
+networks:
+  quizwizard-network:
+    driver: bridge
+
+volumes:
+  sql-data:

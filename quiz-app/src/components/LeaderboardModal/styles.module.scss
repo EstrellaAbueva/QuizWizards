@@ -1,0 +1,37 @@
+@use '../../styles' as *;
+
+.LeaderboardModal {
+  background-color: $neutral-50;
+  padding: 44px 60px;
+  max-width: 700px;
+
+  &_header {
+    @include flex-between;
+    margin-bottom: 40px;
+  }
+
+  &_currentTakerRank {
+    @include flex-center;
+    flex-direction: column;
+  }
+
+  &_content {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 24px;
+    max-height: 500px;
+    overflow-y: scroll;
+  }
+
+  &_noData {
+    @include flex-center;
+    flex-direction: column;
+
+    &_icon {
+      color: $neutral-300;
+      font-size: 200px;
+      margin: 20px;
+    }
+  }
+}
